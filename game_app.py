@@ -46,25 +46,56 @@
 #     print(f"{animal.name} does {animal.make_sound()}")
 
 
-class BankAccount:
-    def __init__(self, funds) -> None:
-        self.__funds = funds
+# class BankAccount:
+#     def __init__(self, funds) -> None:
+#         self.__funds = funds
 
-    def cash_in(self, value):
-        if value > 0:
-            self.__funds += value
+#     def cash_in(self, value):
+#         if value > 0:
+#             self.__funds += value
 
-    def cash_out(self, value):
-        if value > 0 and value <= self.__funds:
-            self.__funds -= value
+#     def cash_out(self, value):
+#         if value > 0 and value <= self.__funds:
+#             self.__funds -= value
 
-    def view_funds(self):
-        return self.__funds
+#     def view_funds(self):
+#         return self.__funds
 
 
-account = BankAccount(funds=1000)
-print(f"your funds {account.view_funds()}")
-account.cash_in(value=1000)
-print(f"your funds {account.view_funds()}")
-account.cash_out(value=500)
-print(f"your funds {account.view_funds()}")
+# account = BankAccount(funds=1000)
+# print(f"your funds {account.view_funds()}")
+# account.cash_in(value=1000)
+# print(f"your funds {account.view_funds()}")
+# account.cash_out(value=500)
+# print(f"your funds {account.view_funds()}")
+
+
+# Abstraction
+
+# from abc import ABC, abstractmethod
+
+
+# class Vehicle(ABC):
+#     @abstractmethod
+#     def turn_on(self):
+#         pass
+
+#     @abstractmethod
+#     def turn_off(self):
+#         pass
+
+
+# class Car(Vehicle):
+#     def __init__(self) -> None:
+#         pass
+
+#     def turn_on(self):
+#         return "car turned on"
+
+#     def turn_off(self):
+#         return "car turned off"
+
+
+# yellow_car = Car()
+# print(yellow_car.turn_on())
+# print(yellow_car.turn_off())
