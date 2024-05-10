@@ -1,3 +1,52 @@
+class Character:
+    def __init__(self, name: str, life: int, level: int) -> None:
+        self.__name = name
+        self.__life = life
+        self.__level = level
+
+    def get_life(self):
+        return self.__life
+
+    def get_name(self):
+        return self.__name
+
+    def get_level(self):
+        return self.__level
+
+    def show_details(self):
+        return f"\n name: {self.get_name()}\n level: {self.get_level()}\n life: {self.get_life()}"
+
+
+class Hero(Character):
+    def __init__(self, name: str, life: int, level: int, skill: str) -> None:
+        super().__init__(name, life, level)
+        self.__skill = skill
+
+    def get_skill(self):
+        return self.__skill
+
+    def show_details(self):
+        return f"{super().show_details()}\n skill: {self.get_skill()}"
+
+
+class Enemy(Character):
+    def __init__(self, name: str, life: int, level: int, type: str) -> None:
+        super().__init__(name, life, level)
+        self.__type = type
+
+    def get_type(self):
+        return self.__type
+
+    def show_details(self):
+        return f"{super().show_details()}\n skill: {self.get_type()}"
+
+
+hero = Hero(name="Hero", life=100, level=5, skill="super punch")
+enemy = Enemy(name="Bat monster", level=3, life=50, type="flyer")
+
+print(f"Hero {hero.show_details()}")
+print(f"Enemy {enemy.show_details()}")
+
 # POO
 
 # class Person:
@@ -7,7 +56,6 @@
 
 #     def salut(self):
 #         return f"Hi my name is {self.name} I'm {self.age}"
-
 
 # person = Person("Raul", 40)
 # salut = person.salut()
@@ -103,32 +151,42 @@
 
 # Heranca multipla
 
-class Animal():
-    def __init__(self, name) -> None:
-        self.name = name
+# class Animal():
+#     def __init__(self, name) -> None:
+#         self.name = name
 
-    def make_sound(self):
-        return f"{self.name} made a sound"
-
-
-class Mamal(Animal):
-    def breast_feed(self):
-        return f"{self.name} is breastfeedind"
+#     def make_sound(self):
+#         return f"{self.name} made a sound"
 
 
-class Bird(Animal):
-    def fly(self):
-        return f"{self.name} is flying"
+# class Mamal(Animal):
+#     def breast_feed(self):
+#         return f"{self.name} is breastfeedind"
 
 
-class Bat(Mamal, Bird):
-    def make_sound(self):
-        return "bats make supersonic sounds"
+# class Bird(Animal):
+#     def fly(self):
+#         return f"{self.name} is flying"
 
 
-bat = Bat(name="batmonster")
+# class Bat(Mamal, Bird):
+#     def make_sound(self):
+#         return "bats make supersonic sounds"
 
-print(bat.name)
-print(bat.breast_feed())
-print(bat.fly())
-print(bat.breast_feed())
+
+# bat = Bat(name="batmonster")
+
+# print(bat.name)
+# print(bat.breast_feed())
+# print(bat.fly())
+# print(bat.breast_feed())
+
+# def my_decorator(func):
+#     def wrapper():
+#         print("Antes da funcao ser chamada")
+#         func()
+#         print("depois da funcao")
+
+#     return wrapper
+
+#
