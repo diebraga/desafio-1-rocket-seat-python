@@ -99,3 +99,36 @@
 # yellow_car = Car()
 # print(yellow_car.turn_on())
 # print(yellow_car.turn_off())
+
+
+# Heranca multipla
+
+class Animal():
+    def __init__(self, name) -> None:
+        self.name = name
+
+    def make_sound(self):
+        return f"{self.name} made a sound"
+
+
+class Mamal(Animal):
+    def breast_feed(self):
+        return f"{self.name} is breastfeedind"
+
+
+class Bird(Animal):
+    def fly(self):
+        return f"{self.name} is flying"
+
+
+class Bat(Mamal, Bird):
+    def make_sound(self):
+        return "bats make supersonic sounds"
+
+
+bat = Bat(name="batmonster")
+
+print(bat.name)
+print(bat.breast_feed())
+print(bat.fly())
+print(bat.breast_feed())
